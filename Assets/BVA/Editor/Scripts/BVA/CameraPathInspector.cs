@@ -568,7 +568,7 @@ namespace BVA.Component
                 float size = HandleUtility.GetHandleSize(t.points[i].position + t.points[i].handlenext) * 0.1f;
                 if (handlePositionMode == CameraPathEManipulationModes.Free)
                 {
-                    var fmh_571_101_638144107056657041 = Quaternion.identity; posNext = Handles.FreeMoveHandle(t.points[i].position + t.points[i].handlenext, size, Vector3.zero, Handles.SphereHandleCap);
+                    var fmh_571_101_638144107056657041 = Quaternion.identity; var fmh_572_25_638676336842021642 = Quaternion.identity; posNext = Handles.FreeMoveHandle(t.points[i].position + t.points[i].handlenext, size, Vector3.zero, Handles.SphereHandleCap);
                 }
                 else
                 {
@@ -603,7 +603,10 @@ namespace BVA.Component
                 float size = HandleUtility.GetHandleSize(t.points[i].position + t.points[i].handleprev) * 0.1f;
                 if (handlePositionMode == CameraPathEManipulationModes.Free)
                 {
-                    var fmh_606_101_638144107056679327 = Quaternion.identity; posPrev = Handles.FreeMoveHandle(t.points[i].position + t.points[i].handleprev, 0.1f * HandleUtility.GetHandleSize(t.points[i].position + t.points[i].handleprev), Vector3.zero, Handles.SphereHandleCap);
+                    var fmh_606_101_638144107056679327 = Quaternion.identity; var fmh_608_25_638676336842044597 = Quaternion.identity; posPrev = Handles.FreeMoveHandle(t.points[i].position + t.points[i].handleprev,
+                        0.1f * HandleUtility.GetHandleSize(t.points[i].position + t.points[i].handleprev),
+                        Vector3.zero, 
+                        Handles.SphereHandleCap);
                 }
                 else
                 {
@@ -642,7 +645,8 @@ namespace BVA.Component
                 }
                 else
                 {
-                    var fmh_645_72_638144107056684995 = (Tools.pivotRotation == PivotRotation.Local) ? t.points[i].rotation : Quaternion.identity; pos = Handles.FreeMoveHandle(t.points[i].position, HandleUtility.GetHandleSize(t.points[i].position) * 0.2f, Vector3.zero, Handles.RectangleHandleCap);
+                    var fmh_645_72_638144107056684995 = (Tools.pivotRotation == PivotRotation.Local) ? t.points[i].rotation : Quaternion.identity; var fmh_651_47_638676336842048747 = Quaternion.identity; pos = Handles.FreeMoveHandle(
+                        t.points[i].position,HandleUtility.GetHandleSize(t.points[i].position) * 0.2f, Vector3.zero, Handles.RectangleHandleCap);
 
                 }
                 if (EditorGUI.EndChangeCheck())
